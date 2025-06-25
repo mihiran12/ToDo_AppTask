@@ -5,10 +5,14 @@ function NoteButton(){
     const[note , setNote] = useState([]);
 
     const handleSideBar = () =>{
-        console.log(note.length)
-        setOpen(!open);
-        
+        setOpen(!open);   
     }
+
+    const handlekeyDown= (e) => {        
+        if(e.key === "Enter"){
+            handleSideBar();            
+        }
+    } 
 
 return(
     <div>
@@ -22,11 +26,15 @@ return(
 
         {open && (
             <div className="note">
-                <p style={{margin: "1%" , fontSize: "20px"}}>Special Note</p>
+                <header className="note-header">
+                    <h3>Special Note</h3>
+                </header>
                 <textarea
-                    type="text"
+                    className="note-textarea"
                     value={note}
-                    onChange={(e)=>setNote(e.target.value)}
+                    onChange={(e) => setNote(e.target.value)}
+                    placeholder="Write your note here..."
+                    onKeyDown={handlekeyDown}
                 />
             </div>
         )}

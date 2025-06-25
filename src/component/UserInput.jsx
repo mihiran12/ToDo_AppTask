@@ -11,7 +11,7 @@ function UserInput(){
     const inputRefs = useRef([]);
 
     const handlekeyDown= (e) => {        
-        if(e.key === "Enter"){
+        if(e.key === "Enter" ){
             setInputValue((prev) => [...prev, ""]);
             setDoneInputs((prev) => [...prev, false]);
             setTimeout(() => {
@@ -35,9 +35,11 @@ function UserInput(){
     };
 
     const handleCheckmark = (index) => {
-      const newDoneInputs = [...doneInputs];
-      newDoneInputs[index] = !newDoneInputs[index];
-      setDoneInputs(newDoneInputs);
+      if(inputValue[index].length !== 0 ){
+        const newDoneInputs = [...doneInputs];
+        newDoneInputs[index] = !newDoneInputs[index];
+        setDoneInputs(newDoneInputs);
+      }
     };
 
 
