@@ -1,6 +1,15 @@
 # 📋 ToDO_AppTask
 
-A simple task management app built with React.
+A simple and efficient task management app built with React and Vite, 
+Designed to help organize, track, and manage daily tasks easily.
+
+---
+
+## 📸 Screenshots
+
+![screenshot - 01](./src/assets/screenshots/Screenshot-01.png)
+![screenshot - 01](./src/assets/screenshots/Screenshot-02.png)
+![screenshot - 01](./src/assets/screenshots/Screenshot-03.png)
 
 ---
 
