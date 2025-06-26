@@ -1,8 +1,8 @@
 import React , {useRef, useState} from "react";
-import RemoveButton from './RemoveButton';
-import ChechmarkButton from "./CheckmarkButton";
-import ProgressBar from '../component/ProgressBar';
-import NoteButton from "./NoteButton";
+import RemoveButton from '../removeButton/RemoveButton';
+import CheckmarkButton from "../checkmarkButton/CheckmarkButton";
+import ProgressBar from '../pregressBar/ProgressBar';
+import NoteButton from "../noteButton/NoteButton";
 
 
 function UserInput(){
@@ -16,7 +16,10 @@ function UserInput(){
             setDoneInputs((prev) => [...prev, false]);
             setTimeout(() => {
                 const newIndex = inputValue.length; 
-                inputRefs.current[newIndex].focus(); 
+                const newInput = inputRefs.current[newIndex];
+                if(newInput){
+                  newInput.focus()
+                } 
             }, 0); 
         }
     }           
@@ -60,7 +63,7 @@ function UserInput(){
                 className={doneInputs[index] ? "done" : ""}
               />
               <RemoveButton index={index} handleRemove={handleRemove} />
-              <ChechmarkButton index={index} handleCheckmark={handleCheckmark} />
+              <CheckmarkButton index={index} handleCheckmark={handleCheckmark} />
               <NoteButton/>
             </div>
           </div>

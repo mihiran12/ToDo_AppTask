@@ -1,5 +1,3 @@
-import DateComponent from '../component/DateComponenet';
-
 function ProgressBar(props){
 
     const totalTasks = props.inputValue.length;
