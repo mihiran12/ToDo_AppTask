@@ -9,5 +9,10 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
   },
+  coverage: {
+      reporter: ['text', 'html'],
+      reportsDirectory: './coverage',
+      exclude: ['node_modules/', 'vite.config.*', '**/*.test.*'],
+    },
 
 })

@@ -1,6 +1,7 @@
 import { fireEvent, render , screen } from "@testing-library/react";
 import NoteButton from "./NoteButton";
-import { describe, expect } from "vitest";
+import { describe, expect, vi } from "vitest";
+import user, { userEvent } from '@testing-library/user-event'
 
 
 describe('Note Section' , () => {
@@ -21,6 +22,7 @@ describe('Note Section' , () => {
         const noteButtonElement = screen.getByRole('button' , {name : "🕮"})
         fireEvent.click(noteButtonElement);    
         const textareaElement = screen.getByRole('textbox');
+        fireEvent.change(textareaElement , {target : {value : "task 01"}})
         expect(textareaElement).toBeInTheDocument();
     })
 
@@ -42,12 +44,5 @@ describe('Note Section' , () => {
     })
 
     
-
-
-
-    
-
-
-
 })
 

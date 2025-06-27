@@ -1,4 +1,4 @@
-import { fireEvent, render , screen } from "@testing-library/react";
+import { fireEvent, render , screen , waitFor } from "@testing-library/react";
 import { describe, expect } from "vitest";
 import UserInput from "./UserInput";
 import CheckmarkButton from "../checkmarkButton/CheckmarkButton";
@@ -6,7 +6,7 @@ import CheckmarkButton from "../checkmarkButton/CheckmarkButton";
 
 describe('UserInput' , ()=>{
 
-    it('progressbar render correctly' , ()=>{
+   it('progressbar render correctly' , ()=>{
         render(<UserInput inputValue={[]} doneInputs={[]}/>)
         const progressTextElement = screen.getByText("0% Completed");
         expect(progressTextElement).toBeInTheDocument();
@@ -36,14 +36,14 @@ describe('UserInput' , ()=>{
         expect(noteButtonElement).toBeInTheDocument();
     })
 
-    it('adds a new input when Enter is pressed' , ()=>{
+    it('adds a new input when Enter is pressed' , async ()=>{
         render(<UserInput/>)
         const userInputElement = screen.getByRole('textbox')
         fireEvent.change(userInputElement , {target : {value : "task 01"}})
         fireEvent.keyDown(userInputElement,{key: "Enter"});
-        const userInputElements = screen.getAllByRole('textbox')
-        expect(userInputElements.length).toBe(2)
-    })
+        const userInputElements = screen.getAllByRole('textbox');
+        expect(userInputElements.length).toBe(2);
+  });
 
     it('disappear input feild when remove button clicked' , ()=>{
         render(<UserInput/>)
@@ -70,5 +70,6 @@ describe('UserInput' , ()=>{
         fireEvent.click(checkmarkButtonElement)
         expect(userInputElement).toHaveClass("done")
     })
+
 
 })
