@@ -1,10 +1,21 @@
-body {
-  background: radial-gradient( #F5E7DE, #F2BFA4);
-  color: #fff;
-  height: 100%;
-  width: 100%;
+:root {
+  --background-color: radial-gradient(#F5E7DE, #F2BFA4);
+  --text-color: #000000;
 }
 
+[data-theme='dark'] {
+  --background-color: #252728;
+  --text-color: #ffffff;
+}
 
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  height: 100%;
+  width: 100%;
+  transition: var(--background-color) 1.2s ease-in-out, color 1s ease-in-out;
+}
 
-
+.app-container {
+  min-height: 100vh;
+}

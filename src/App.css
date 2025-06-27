@@ -1,7 +1,12 @@
+/*Light mode*/
 .title {
-    text-align: center;
-    font-size: 25px;
-    color: #17203D;   
+  text-align: center;
+  font-size: 25px;
+  color: #17203D;
+}
+
+[data-theme='dark'] .title {
+  color: #ffcc00;
 }
 
 .input-wrapper {
@@ -13,18 +18,27 @@
 .input-container {
   display: flex;
   align-items: center;
-  background: #171c48;
-  border: 1px solid #828dff;
+  background: #d0bfd7;
+  border: 1px solid #959292;
   border-radius: 20px;
   padding: 0 10px;
   width: 75%;
 }
 
+[data-theme='dark'] .input-container {
+  background: #33354f;
+  border-color: #666f71;
+}
+
 .input-number {
-  color: #f1e05a;
+  color: #0f0e0e;
   font-size: 25px;
   margin: 0 10px;
   min-width: 20px;
+}
+
+[data-theme='dark'] .input-number {
+  color: #ffd966;
 }
 
 input {
@@ -32,9 +46,13 @@ input {
   background: transparent;
   border: 10px;
   outline: none;
-  color: #fff;
+  color: #17203D;
   font-size: 25px;
   padding: 12px 0;
+}
+
+[data-theme='dark'] input {
+  color: #ffffff;
 }
 
 input.done {
@@ -42,6 +60,9 @@ input.done {
   color: gray;
 }
 
+[data-theme='dark'] input.done {
+  color: #888;
+}
 
 .remove-button {
   background: none;
@@ -52,13 +73,21 @@ input.done {
   margin-left: 10px;
 }
 
+[data-theme='dark'] .remove-button {
+  color: #ff5c5c;
+}
+
 .checkmark {
   background: none;
   border: none;
   margin: 0 10px;
   cursor: pointer;
-  color: #1BFC06;
+  color: #177f0e;
   font-size: 30px;
+}
+
+[data-theme='dark'] .checkmark {
+  color: #00ff85;
 }
 
 footer {
@@ -71,12 +100,21 @@ footer {
   text-align: center;
 }
 
+[data-theme='dark'] footer {
+  background-color: #2a2a2a;
+  color: #ccc;
+}
+
 .progress-bar-wrapper {
   margin: 2% 10%;
   width: 80%;
   text-align: center;
   font-size: 25px;
-  color:#172d13;
+  color: #172d13;
+}
+
+[data-theme='dark'] .progress-bar-wrapper {
+  color: #c7e8f5;
 }
 
 .progress-bar {
@@ -87,39 +125,59 @@ footer {
   overflow: hidden;
 }
 
+[data-theme='dark'] .progress-bar {
+  background-color: #444;
+}
+
 .progress-fill {
   height: 100%;
+  background-color: #2ecc71;
+}
+
+[data-theme='dark'] .progress-fill {
   background-color: #6bb77b;
 }
 
-.date{
+.date {
   font-size: 25px;
-  color: #fff;
-  padding : 0;
+  color: #17203D;
+  padding: 0;
+}
+
+[data-theme='dark'] .date {
+  color: #e0e0e0;
 }
 
 .note-button {
   background: none;
   border: none;
-  color: #fff;
+  color: #17203D;
   font-size: 30px;
   cursor: pointer;
   margin-left: 0px;
 }
 
+[data-theme='dark'] .note-button {
+  color: #ddd;
+}
+
 .note {
   position: fixed;
   bottom: 43%;
-  right:0.5%;    
+  right: 0.5%;
   width: 8%;
   height: 20%;
   padding: 1rem;
   background: linear-gradient(135deg, #7da2a9, #b4dfe5);
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-
   display: flex;
   flex-direction: column;
+}
+
+[data-theme='dark'] .note {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .note-header h3 {
@@ -130,26 +188,44 @@ footer {
   margin: 0;
 }
 
+[data-theme='dark'] .note-header h3 {
+  color: #f5f5f5;
+}
+
 .note-textarea {
   margin-top: 0.5rem;
-  right:1%;
+  right: 1%;
   height: 90%;
   font-size: 1rem;
   border: 2px solid #ccc;
   border-radius: 12px;
-  background-color: #ffffffcc; 
+  background-color: #ffffffcc;
   color: #333;
   resize: none;
   padding: 0.35rem;
   font-family: inherit;
 }
 
+[data-theme='dark'] .note-textarea {
+  background-color: #2a2a2a;
+  color: #ddd;
+  border-color: #666;
+}
 
 .note-textarea:focus {
   outline: none;
   border-color: #4d9df4;
   background-color: #fff;
 }
+
+[data-theme='dark'] .note-textarea:focus {
+  background-color: #333;
+  border-color: #6c9eff;
+}
+
+
+
+
 
 
 
